@@ -13,11 +13,15 @@ win.nodelay(1) # -1
 snake = [(4, 10), (4, 9), (4, 8)]
 food = (10, 20)
 
+win.addch(food[0], food[1], '#')
 # game logic
 
 score = 0
 
-while True:
+ESC = 27
+key = curses.KEY_RIGHT
+
+while key !=ESC:
         event = win.getch()
         # ...
         for C in snake:
@@ -27,3 +31,4 @@ while True:
         
 curses.endwin()
 print(f"Final score= {score}")
+
